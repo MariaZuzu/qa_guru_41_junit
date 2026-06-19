@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.zuuma10'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    "com.codeborne:selenide:7.14.0",
+    "org.junit.jupiter:junit-jupiter:5.14.2"
+}
+
+test {
+    useJUnitPlatform()
+}
