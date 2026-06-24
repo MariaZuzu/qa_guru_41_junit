@@ -12,6 +12,7 @@ import pages.SushiwokPage;
 import java.util.stream.Stream;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -45,7 +46,7 @@ public class SushiwokTest extends TestBase {
 
     void changeLanguage(Language language) {
         $(".selectLanguage-module__lang--AiS3h").click();
-        $x("//div[contains(@class, 'selectLanguage-module__lang--AiS3h')]//*[@value='" + language.langCode + "']").click();
+        $$(".selectLanguage-module__lang--AiS3h option").findBy(value(language.langCode)).click();
         $(".horizontalHeaderMenu-module__root--xQ4cu").shouldHave(text(language.expectedMenuItemText));
     }
 
